@@ -19,6 +19,7 @@ RUN apt-get update \
         locales \
         zip \
         unzip \
+        git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -40,7 +41,8 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-png-dir
         exif \
         opcache \
         pdo_mysql \
-        json
+        json \
+        pcntl
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
